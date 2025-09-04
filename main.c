@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:23:30 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/03 18:14:58 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/03 19:05:18 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 	i = 5;
 	while (i < 720)
 	{
-	my_mlx_pixel_put(&img, i, i, 0x00FFFFFF);
+	my_mlx_pixel_put(&img, i, 50, 0x00FFFFFF);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	i++;
 	}
