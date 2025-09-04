@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:23:30 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/03 19:05:18 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/03 22:34:02 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ int	main(void)
 	}
 	mlx_loop(mlx);
 }
+
+https://github.com/gmarcha/so_long
 
 //cc -Wall -Wextra -Werror -Imlx -lXext -lX11 -lm main.c ./mlx/libmlx.a
