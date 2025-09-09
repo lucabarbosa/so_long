@@ -1,33 +1,46 @@
-NAME = so_long
-SRC = $(addprefix src/, main.c utils.c draw.c map_parser.c path_checker.c game_utils.c map_parser_utils.c free.c)
-GNL_SRC = $(addprefix includes/gnl/, get_next_line.c get_next_line_utils.c)
-PRINTF_SRC = $(addprefix includes/ft_printf/, ft_printf.c ft_putchar_printf.c ft_putnbr_printf.c ft_putnbr_u.c \
-		ft_putstr_printf.c ft_strchr.c ft_pointerhex.c ft_putnbr_hex.c)
+NAME		=	so_long
+CC			=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
+OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
+SRC			=	src/struct_init.c \
+				src/free_game.c \
+				src/game_init.c \
+				src/
 
-OBJ := $(SRC:%.c=%.o)
-GNL_OBJ := $(GNL_SRC:%.c=%.o)
-PRINTF_OBJ := $(PRINTF_SRC:%.c=%.o)
+MLX			=	mlx/Makefile.gen
+LIBFT			=	includes/libft/libft.a
+INC			=	-I ./libft -I ./mlx
+LIBS			=	-L ./libft -LIBFT -L ./mlx -lmlx -lXext -lX11 -lm -lbsd
 
-CC = cc
-CCFLAGS = -Wextra -Wall -Werror
+all:		$(MLX) $(LIBFT) obj $(NAME)
 
-all: $(NAME)
+$(NAME):	$(OBJ)
+			$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
-$(NAME): $(OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
-    $(CC) $(CCFLAGS) $^ -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(MLX):
+			@make -s -C mlx
+			@echo "Minilibx compiled!"
 
-%.o: %.c
-	cc $(CCFLAGS) -Imlx -Iincludes -c $< -o $@
+$(LIBFT):		
+			@make -s -C libft
+			@echo "Libft compiled!"
+
+obj:
+			@mkdir -p obj
+
+obj/%.o:	src/%.c
+			$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 clean:
-	rm -f $(OBJ) $(GNL_OBJ) $(PRINTF_OBJ)
+			@make -s $@ -C libft
+			@rm -rf $(OBJ) obj
+			@echo "Objects deleted."
 
-fclean: clean
-	make clean -C mlx/
-	rm -f $(NAME)
+fclean:		clean
+			@make -s $@ -C libft
+			@rm -rf $(NAME)
+			@echo "Objects and so_long deleted."
 
-re : fclean all
+re:			fclean all
 
-.PHONY: all clean fclean re mlx libft
-
-#https://github.com/42Paris/minilibx-linux
+.PHONY:		all clean fclean re
