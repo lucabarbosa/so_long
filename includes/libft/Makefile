@@ -6,7 +6,7 @@
 #    By: lbento <lbento@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/15 18:22:14 by lbento            #+#    #+#              #
-#    Updated: 2025/08/01 15:01:37 by lbento           ###   ########.fr        #
+#    Updated: 2025/09/08 22:06:25 by lbento           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS = ft_isalpha.c \
 	ft_tolower.c \
 	ft_strchr.c \
 	ft_strrchr.c \
+	ft_strcmp.c \
 	ft_strncmp.c \
 	ft_memchr.c \
 	ft_memcmp.c \
