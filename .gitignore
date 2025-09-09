@@ -1,5 +1,5 @@
-a.out
-a.exe
-so_long.out
-so_long.exe
+*.out
+*.exe
+*.a
 .vscode
+aprendendo_mlx.c
