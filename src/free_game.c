@@ -6,13 +6,13 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:22:14 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/09 00:48:33 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:39:33 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	game_destroy(t_game *game);
+void	game_destroy(t_map *game);
 void	error_exit(char *error_message, int error_number);
 void	free_game(t_game_manager *struct_game);
 
@@ -42,7 +42,7 @@ void	free_game(t_game_manager *struct_game)
 	}
 }
 
-void	game_destroy(t_game *game)
+void	game_destroy(t_map *game)
 {
 	int				i;
 
