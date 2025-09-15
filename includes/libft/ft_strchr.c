@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 20:03:26 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:58:44 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:34:37 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&str[i]);
 	return (NULL);
 }
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char *string = "tripouille";
-// 	char *finded;
-
-// 	finded = ft_strchr(string, 't' + 256);
-// 	printf("%s", finded);
-// }

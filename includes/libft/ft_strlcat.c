@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 15:40:45 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:59:13 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:23 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t limit)
 	dest[size_dest + i] = '\0';
 	return (size_dest + size_src);
 }
-// #include <stdio.h>
-// int main (void)
-// {
-//     char dest[20] = "Hello";
-//     const char *src = " World";
-//     int total;
-
-//     total = ft_strlcat(dest, src, 10);
-//     printf("%d\n\n", total);
-//     printf("%s", dest);   
-// }

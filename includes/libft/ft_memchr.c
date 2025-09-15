@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 20:22:46 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:50:27 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:33:53 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-// #include <stdio.h>
-// int main(void)
-// {
-//     char *arr = "Hello World";
-//     char *answer;
-//     answer = ft_memchr(arr, 'W', 15);
-//     printf("%s\n", answer);
-//     return (0);
-// }
+

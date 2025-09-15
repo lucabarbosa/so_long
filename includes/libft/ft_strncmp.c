@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 12:49:45 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 15:00:22 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:38 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char) *s1 - (unsigned char) *s2);
 }
-// #include<stdio.h>
-// int	main(void)
-// {
-// 	char *s1 = "Hello";
-// 	char *s2= "Hello";
-// 	int result;
-// 	printf("%d\n", result = ft_strncmp(s1, s2, 0));
-// }
+

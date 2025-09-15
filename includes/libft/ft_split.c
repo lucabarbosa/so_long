@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:42:44 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:58:29 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:34:32 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,18 +115,3 @@ static void	*ft_free(char **strs, int count)
 	free(strs);
 	return (NULL);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char **result;
-// 	int	i;
-// 	result = ft_split("Hello entire world", ' ');
-// 	i = 0;
-// 	while(result[i])
-// 	{
-// 	printf("\"%s\"", result[i]);
-// 	i++;
-// 	}
-// 	ft_free(result, i);
-// 	return (0);
-// }

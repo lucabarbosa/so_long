@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 13:29:13 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 15:00:34 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:42 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-// #include<stdio.h>
-// int main(void)
-// {
-// 	char *haystack = "Hello World";
-// 	char *needle = "World";
-// 	char *result;
-
-// 	result = ft_strnstr(haystack, needle, 0);
-// 	printf("%s\n", result);
-// }

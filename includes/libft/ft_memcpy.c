@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:44:36 by lbento            #+#    #+#             */
-/*   Updated: 2025/07/30 15:38:26 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:34:02 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-//  #include <stdio.h>
-//  int	main(void)
-//  {
-//  	char source[1] = "\0";
-//  	char dest[1];
-
-//  	ft_memcpy(dest, source, 1);
-//  	printf("%s\n", dest);
-//  }

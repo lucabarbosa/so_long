@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 20:31:27 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:58:55 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:05 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,3 @@ char	*ft_strdup(const char *s)
 	ft_memcpy(dest, (const void *)s, size_s);
 	return (dest);
 }
-// #include <stdio.h>
-// int main (void)
-// {
-// 	//char *str = "String copied";
-// 	char *dup;
-
-// 	dup = ft_strdup("");
-// 	printf("%s\n", dup);
-// 	free(dup);
-// 	return (0);
-// }

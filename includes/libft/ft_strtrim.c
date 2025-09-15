@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:09:23 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 15:00:56 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:48 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,4 @@ char	*ft_strtrim(const char *s1, const char *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char *trimmed;
-// 	trimmed = ft_strtrim("  Hello entire world!  ", " ");
-// 	printf("%s\n", trimmed);
-// 	free (trimmed);
-// 	trimmed = ft_strtrim("****Hello entire world!**", "*");
-// 	printf("%s\n", trimmed);
-// 	free (trimmed);
-// 	trimmed = ft_strtrim("abc", "ab");
-// 	printf("%s\n", trimmed);
-// 	free (trimmed);
-// 	return (0);
-// }
+

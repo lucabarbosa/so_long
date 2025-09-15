@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 12:50:08 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:54:01 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:34:18 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,4 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-// int	main(void)
-// {
-// 	ft_putstr_fd("", 1);
-// 	ft_putstr_fd("Error", 2);
-// 	ft_putstr_fd("\nHello \t World", 1);
-// 	ft_putstr_fd("Hello World", 42);
-// 	return (0);
-// }
+

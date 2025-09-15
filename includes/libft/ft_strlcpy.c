@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:20:12 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:59:49 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:27 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (size_src);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char copied[10];
-// 	size_t total;
-// 	total = ft_strlcpy(copied, "Hello", 10);
-// 	printf("O tamano total é: %zu e a string copiada: %s\n", total, copied);
-// 	total = ft_strlcpy(copied, "Hello", 4);
-// 	printf("O tamano total é: %zu e a string copiada: %s\n", total, copied);
-// 	total = ft_strlcpy(copied, "", 10);
-// 	printf("O tamano total é: %zu e a string copiada: %s\n", total, copied);
-// 	total = ft_strlcpy(copied, "Hello", 0);
-// 	printf("O tamano total é: %zu e a string copiada: %s\n", total, copied);
-// }

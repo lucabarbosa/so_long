@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:22:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:49:07 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:32:50 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (total * signal);
 }
-// #include <stdio.h>
-// #include <stdlib.h>
-// int	main(void)
-// {
-// 	char *str = "       -42";
-// 	int	result;
-// 	int true_atoi;
-
-// 	result = ft_atoi(str);
-// 	true_atoi = atoi(str);
-// 	printf("%d\n", result);
-// 	printf("%d\n", true_atoi);
-// 	return (0);
-// }

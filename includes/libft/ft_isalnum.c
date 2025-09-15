@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 12:25:36 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:49:11 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:33:25 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,4 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-// #include <stdio.h>
-// int main(void)
-// {
-//     int result;
-//     result = ft_isalnum('a');
-//     printf("%d\n", result);
-//     result = ft_isalnum('6');
-//     printf("%d\n", result);
-//     result = ft_isalnum('$');
-//     printf("%d\n", result);
-//     result = ft_isalnum(' ');
-//     printf("%d\n", result);
-// }
+

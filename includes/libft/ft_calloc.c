@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 20:22:14 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:49:09 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:33:21 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (ptr);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int	*test;
-// 	test = ft_calloc(0, 2);
-// 	printf("%n\n", test);
-// 	free(test);
-// 	return(0);
-// }
+

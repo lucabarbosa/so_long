@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:11:37 by lbento            #+#    #+#             */
-/*   Updated: 2025/08/01 14:59:06 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 01:35:19 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 str[i + j] = '\0';
 	return (str);
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char *str1 = "Hello ";
-// 	char *str2 = "World";
-// 	char *result;
-// 	result = ft_strjoin (str1, str2);
-// 	printf("Teste 1: %s\n", result);
-// 	free (result);
-// 	result = ft_strjoin ("Hello", " entire world!");
-// 	printf("Teste 2: %s\n", result);
-// 	free (result);
-// }
+
