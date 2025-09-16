@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/09 00:48:30 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/15 23:47:07 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_game_manager
 	void			*mlx;
 	void			*mlx_win;
 	t_img			*mlx_img;
-	t_game			*game;
+	t_map			*game;
 	t_img			*player;
 	t_img			*coll;
 	t_img			*ground;
@@ -35,7 +35,7 @@ typedef struct s_game_manager
 	t_img			*exit;
 }				t_game_manager;
 
-typedef struct s_game
+typedef struct s_map
 {
 	int				**map;
 	int				height;
@@ -52,7 +52,7 @@ typedef struct s_game
 	int				count_coll;
 	int				count_exit;
 	int				count_player;
-}				t_game;
+}				t_map;
 
 typedef struct s_coord
 {
@@ -60,9 +60,14 @@ typedef struct s_coord
 	int				y;
 }				t_coord;
 
-void	game_destroy(t_game *game);
+void	game_destroy(t_map *game);
 t_game_manager	*struct_init(char *map);
 void	free_game(t_game_manager *struct_game);
+void	init_map(t_game_manager *game, char *map);
+void	init_game(t_game_manager *game, char *map);
+void	read_map(t_game_manager *game, char *file);
+void	map_valid(t_game_manager *game, char *file);
+void	parsing_map(t_game_manager *game, char *file);
 void	error_exit(char *error_message, int error_number);
 
 #endif

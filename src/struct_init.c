@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:14:12 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 01:56:57 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/16 09:27:02 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_game_manager	*struct_init(char *map)
 
 	game = (t_game_manager *)malloc(sizeof(t_game_manager));
 	if (!game)
-			error_exit("struct_init() -> malloc()", errno);
+			error_exit("struct_init -> malloc:", errno);
 	game->game = 0;
 	game->mlx = 0;
 	game->mlx_win = 0;
@@ -46,7 +46,7 @@ void	init_game(t_game_manager *game, char *map)
 	if (game->game == 0)
 	{
 		free_game(game);
-		error_exit("init_game() -> malloc()", errno);
+		error_exit("init_game -> malloc:", errno);
 	}
 	game->game->map = 0;
 	game->game->coll = 0;
@@ -59,7 +59,7 @@ void	init_game(t_game_manager *game, char *map)
 	game->game->player_down = 0;
 	game->game->player_left = 0;
 	game->game->player_right = 0;
-	map_init(game, map);
+	init_map(game, map);
 }
 
 static void	init_render(t_game_manager *game)
