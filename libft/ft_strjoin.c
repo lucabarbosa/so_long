@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 12:50:08 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 01:34:18 by lbento           ###   ########.fr       */
+/*   Created: 2025/07/22 14:11:37 by lbento            #+#    #+#             */
+/*   Updated: 2025/09/18 19:12:03 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd);
+char	*ft_strjoin(char const *s1, char const *s2);
 
-void	ft_putendl_fd(char *s, int fd)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*str;
+	size_t	len_s1;
+	size_t	len_s2;
+	size_t	i;
+	size_t	j;
 
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	str = (char *)malloc(len_s1 + len_s2 + 1);
+	if (!str)
+		return (0);
 	i = 0;
-	while (s[i] != '\0')
+	while (i < len_s1)
 	{
-		write (fd, &s[i], 1);
-	i++;
+		str[i] = s1[i];
+		i++;
 	}
-	write(fd, "\n", 1);
+	j = 0;
+	while (j < len_s2)
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+str[i + j] = '\0';
+	return (str);
 }
-

@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:09:23 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 01:35:48 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/18 19:12:09 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ char	*ft_strtrim(const char *s1, const char *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-

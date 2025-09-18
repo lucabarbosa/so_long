@@ -8,7 +8,7 @@ SRC			=	src/struct_init.c \
 				src/
 
 MLX			=	mlx/Makefile.gen
-LIBFT			=	includes/libft/libft.a
+LIBFT			=	libft/libft.a
 INC			=	-I ./libft -I ./mlx
 LIBS			=	-L ./libft -LIBFT -L ./mlx -lmlx -lXext -lX11 -lm -lbsd
 

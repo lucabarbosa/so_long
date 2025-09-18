@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 17:31:07 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 01:33:59 by lbento           ###   ########.fr       */
+/*   Created: 2025/07/18 11:09:06 by lbento            #+#    #+#             */
+/*   Updated: 2025/09/18 19:13:17 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{	
-	const unsigned char	*str1;
-	const unsigned char	*str2;
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char		*pasted;
+	const unsigned char	*copied;
 	size_t				i;
 
-	if (n == 0)
-		return (0);
-	str1 = (const unsigned char *) s1;
-	str2 = (const unsigned char *) s2;
-	i = 0;
-	while (i < n)
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	copied = (const unsigned char *)src;
+	pasted = (unsigned char *)dest;
+	if (pasted > copied)
+		while (n-- > 0)
+			pasted[n] = copied [n];
+	else
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			pasted[i] = copied[i];
+			i++;
+		}
 	}
-	return (0);
+	return (dest);
 }
-

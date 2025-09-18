@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/16 13:17:23 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 01:36:03 by lbento           ###   ########.fr       */
+/*   Created: 2025/07/16 13:26:43 by lbento            #+#    #+#             */
+/*   Updated: 2025/09/18 19:13:48 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c);
+int	ft_tolower(int c);
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c -32);
+	if (c >= 'A' && c <= 'Z')
+		return (c +32);
 	return (c);
 }
-
