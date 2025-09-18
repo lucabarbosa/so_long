@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:42:58 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 20:26:45 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/18 09:15:09 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 	error_exit("Invalid number of arguments! Use ./so_long maps/<choose the map>\n", 0);
 	if (dotber(argv[1]) == 1)
-	error_exit("Invalid map. The map must be <.ber>\n", 0);
+	error_exit("Invalid map extension. The map must be <.ber>\n", 0);
 game = struct_init(argv[1]);
 	return (0);
 }

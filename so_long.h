@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 23:47:07 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/18 10:10:51 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,20 @@ typedef struct s_game_manager
 typedef struct s_map
 {
 	int				**map;
+	t_coord			player;
+	int				count_player;
+	t_coord			*coll;
+	int				count_coll;
+	t_coord			exit;
+	int				count_exit;
 	int				height;
 	int				width;
-	t_coord			player;
 	int				player_up;
 	int				player_down;
 	int				player_left;
 	int				player_right;
 	int				player_move;
 	int				player_coll;
-	t_coord			exit;
-	t_coord			*coll;
-	int				count_coll;
-	int				count_exit;
-	int				count_player;
 }				t_map;
 
 typedef struct s_coord
