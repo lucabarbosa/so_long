@@ -6,22 +6,22 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:43:22 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 23:49:12 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/21 15:34:29 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	parsing_map(t_game_manager *game, char *file);
+void		parsing_map(t_game_manager *game, char *file);
 static void	coordinates(t_game_manager *game, char *file, int k, int *obj);
 static void	free_matrix(t_game_manager *game, char *file, int **m, int size);
 
 void	parsing_map(t_game_manager *game, char *file)
 {
-	int				i;
-	int				j;
-	int				k;
-	int				obj;
+	int	i;
+	int	j;
+	int	k;
+	int	obj;
 
 	obj = 0;
 	k = 0;

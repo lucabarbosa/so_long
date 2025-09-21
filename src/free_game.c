@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:22:14 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/18 09:08:53 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/19 14:57:19 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	game_destroy(t_map *game)
 
 void	error_exit(char *error_message, int error_number)
 {
-    ft_putendl_fd("Return error:", 2);
-    ft_putstr_fd(error_message, 2);
-    if (error_number != 0)
-    {
-        ft_putstr_fd(": ", 2);
-        ft_putstr_fd(strerror(error_number), 2);
-    }
-    exit(1);
+	ft_putendl_fd("Return error:", 2);
+	ft_putstr_fd(error_message, 2);
+	if (error_number != 0)
+	{
+		ft_putstr_fd(": ", 2);
+		ft_putstr_fd(strerror(error_number), 2);
+	}
+	exit(1);
 }

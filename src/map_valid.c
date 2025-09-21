@@ -6,16 +6,16 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:22:10 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 23:41:08 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/21 15:33:23 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	map_valid(t_game_manager *game, char *file);
-static int	isborder(t_game_manager *game, int i);
-static void verify_config(t_game_manager *game, char *file);
-static void	isvalid(t_game_manager *game, char *file, int i);
+void			map_valid(t_game_manager *game, char *file);
+static int		isborder(t_game_manager *game, int i);
+static void		verify_config(t_game_manager *game, char *file);
+static void		isvalid(t_game_manager *game, char *file, int i);
 
 void	map_valid(t_game_manager *game, char *file)
 {
@@ -27,7 +27,7 @@ void	map_valid(t_game_manager *game, char *file)
 		if (file[i] == '\n')
 			i++;
 		if (file[i] == '\0')
-			break;
+			break ;
 		if (isborder(game, i))
 		{
 			if (file[i] != '1')
@@ -72,7 +72,7 @@ static void	isvalid(t_game_manager *game, char *file, int i)
 	}
 }
 
-static void verify_config(t_game_manager *game, char *file)
+static void	verify_config(t_game_manager *game, char *file)
 {
 	if (game->game->count_player != 1
 		|| game->game->count_exit != 1
@@ -83,4 +83,3 @@ static void verify_config(t_game_manager *game, char *file)
 		error_exit("Map configuration is invalid!", 0);
 	}
 }
-	

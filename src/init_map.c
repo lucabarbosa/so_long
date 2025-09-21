@@ -6,13 +6,13 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:19:35 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/18 10:38:20 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/19 14:59:03 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	init_map(t_game_manager *game, char *map);
+void		init_map(t_game_manager *game, char *map);
 static void	read_file(t_game_manager *game, char **file, char buf[], int fd);
 static void	file_join(t_game_manager *game, char **file, char buf[], int fd);
 
@@ -43,7 +43,7 @@ void	init_map(t_game_manager *game, char *map)
 
 static void	read_file(t_game_manager *game, char **file, char buf[], int fd)
 {
-	int	bytes_read;
+	int		bytes_read;
 	char	*tmp;
 
 	bytes_read = 1;
@@ -63,7 +63,6 @@ static void	read_file(t_game_manager *game, char **file, char buf[], int fd)
 			file_join(game, file, buf, fd);
 		}
 	}
-	
 }
 
 static void	file_join(t_game_manager *game, char **file, char buf[], int fd)

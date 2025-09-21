@@ -6,13 +6,13 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:02:53 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/15 23:44:00 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/21 15:35:19 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	read_map(t_game_manager *game, char *file);
+void		read_map(t_game_manager *game, char *file);
 static void	width_map(t_game_manager *game, char *file);
 static void	height_map(t_game_manager *game, char *file);
 
@@ -21,7 +21,8 @@ void	read_map(t_game_manager *game, char *file)
 	width_map(game, file);
 	height_map(game, file);
 	map_valid(game, file);
-	game->game->coll = (t_coord *)malloc(sizeof(t_coord) * game->game->count_coll);
+	game->game->coll = (t_coord *)malloc
+		(sizeof(t_coord) * game->game->count_coll);
 	if (game->game->coll == 0)
 	{
 		free(file);
