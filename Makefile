@@ -7,7 +7,7 @@ SRC			=	src/struct_init.c \
 				src/init_map.c \
 				src/hand_map.c \
 				src/map_valid.c \
-				src/parsing_map.c \
+				src/convert_map.c \
 				src/
 
 MLX			=	mlx/Makefile.gen

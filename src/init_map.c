@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:19:35 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 11:45:29 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 17:02:29 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	file_join(t_game_manager *game, char **file, char buf[], int fd)
 	tmp = ft_strjoin(*file, buf);
 	free(*file);
 	*file = tmp;
-	if (*file == 0)
+	if (!*file)
 	{
 		close(fd);
 		free_game(game);

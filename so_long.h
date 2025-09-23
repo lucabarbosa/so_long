@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 11:46:40 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 19:30:48 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void			init_map(t_game_manager *game, char *map);
 void			init_game(t_game_manager *game, char *map);
 void			handling_map(t_game_manager *game, char *file);
 void			map_valid(t_game_manager *game, char *file);
-void			parsing_map(t_game_manager *game, char *file);
+void		convert_map(t_game_manager *game, char *file);
 void			error_exit(char *error_message, int error_number);
 
 #endif

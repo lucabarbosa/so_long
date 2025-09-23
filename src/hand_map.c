@@ -23,20 +23,20 @@ void	handling_map(t_game_manager *game, char *file)
 	map_valid(game, file);
 	game->game->coll = (t_coord *)malloc
 		(sizeof(t_coord) * game->game->count_coll);
-	if (game->game->coll == 0)
+	if (!game->game->coll)
 	{
 		free(file);
 		free_game(game);
-		error_exit("parsing_map -> malloc", errno);
+		error_exit("Collectables -> malloc", errno);
 	}
 	game->game->map = (int **)malloc(sizeof(int *) * game->game->height);
-	if (game->game->map == 0)
+	if (!game->game->map)
 	{
 		free(file);
 		free_game(game);
-		error_exit("parsing_map -> malloc", errno);
+		error_exit("handling_map -> malloc", errno);
 	}
-	parsing_map(game, file);
+	convert_map(game, file);
 }
 
 static void	width_map(t_game_manager *game, char *file)
@@ -54,23 +54,23 @@ static void	width_map(t_game_manager *game, char *file)
 
 static void	height_map(t_game_manager *game, char *file)
 {
-	int				i;
-	int				j;
+	int				count_line;
+	int				width_size;
 
 	game->game->height = 1;
-	i = game->game->width + 1;
-	while (file[i] != '\0')
+	count_line = game->game->width + 1;
+	while (file[count_line] != '\0')
 	{
-		j = 0;
-		while (file[i + j] != '\0' && file[i + j] != '\n')
-			j++;
-		if (game->game->width != j)
+		width_size = 0;
+		while (file[count_line + width_size] != '\0' && file[count_line + width_size] != '\n')
+			width_size++;
+		if (game->game->width != width_size)
 		{
 			free(file);
 			free_game(game);
 			error_exit("The map isn't rectangular", 0);
 		}
-		i += j + 1;
+		count_line += width_size + 1;
 		game->game->height++;
 	}
 }
