@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:19:35 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/19 14:59:03 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 11:45:29 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	init_map(t_game_manager *game, char *map)
 	}
 	read_file(game, &file, buf, fd);
 	close(fd);
-	read_map(game, file);
+	handling_map(game, file);
 	free(file);
 }
 
@@ -59,7 +59,7 @@ static void	read_file(t_game_manager *game, char **file, char buf[], int fd)
 		}
 		else
 		{
-			buf[bytes_read] = 0;
+			buf[bytes_read] = '\0';
 			file_join(game, file, buf, fd);
 		}
 	}

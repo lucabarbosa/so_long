@@ -4,7 +4,10 @@ CFLAGS		=	-Wall -Wextra -Werror
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
 SRC			=	src/struct_init.c \
 				src/free_game.c \
-				src/game_init.c \
+				src/init_map.c \
+				src/hand_map.c \
+				src/map_valid.c \
+				src/parsing_map.c \
 				src/
 
 MLX			=	mlx/Makefile.gen

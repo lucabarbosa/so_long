@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/18 19:08:11 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 11:46:40 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <errno.h>
 # include <mlx.h>
 # include <mlx_int.h>
-# include "includes/libft/libft.h"
+# include "libft/libft.h"
 
 typedef struct s_game_manager
 {
@@ -65,7 +65,7 @@ t_game_manager	*struct_init(char *map);
 void			free_game(t_game_manager *struct_game);
 void			init_map(t_game_manager *game, char *map);
 void			init_game(t_game_manager *game, char *map);
-void			read_map(t_game_manager *game, char *file);
+void			handling_map(t_game_manager *game, char *file);
 void			map_valid(t_game_manager *game, char *file);
 void			parsing_map(t_game_manager *game, char *file);
 void			error_exit(char *error_message, int error_number);

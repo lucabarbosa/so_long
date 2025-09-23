@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   handling_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "so_long.h"
 
-void		read_map(t_game_manager *game, char *file);
+void		handling_map(t_game_manager *game, char *file);
 static void	width_map(t_game_manager *game, char *file);
 static void	height_map(t_game_manager *game, char *file);
 
-void	read_map(t_game_manager *game, char *file)
+void	handling_map(t_game_manager *game, char *file)
 {
 	width_map(game, file);
 	height_map(game, file);
@@ -44,7 +44,7 @@ static void	width_map(t_game_manager *game, char *file)
 	game->game->width = 0;
 	while (file[game->game->width] && file[game->game->width] != '\n')
 		game->game->width++;
-	if (game->game->width == 0 || file[game->game->width] == 0)
+	if (game->game->width == 0 || file[game->game->width] == '\0')
 	{
 		free(file);
 		free_game(game);
@@ -59,18 +59,18 @@ static void	height_map(t_game_manager *game, char *file)
 
 	game->game->height = 1;
 	i = game->game->width + 1;
-	while (file[i] != 0)
+	while (file[i] != '\0')
 	{
 		j = 0;
-		while (file[i + j] != 0 && file[i + j] != '\n')
+		while (file[i + j] != '\0' && file[i + j] != '\n')
 			j++;
 		if (game->game->width != j)
 		{
 			free(file);
 			free_game(game);
-			error_exit("map format is invalid", 0);
+			error_exit("The map isn't rectangular", 0);
 		}
-		i += game->game->width + 1;
+		i += j + 1;
 		game->game->height++;
 	}
 }
