@@ -1,5 +1,5 @@
 NAME		=	so_long
-CC			=	gcc
+CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
 SRC			=	src/struct_init.c \
