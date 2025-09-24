@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:19:35 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 17:02:29 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/24 16:08:18 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	init_map(t_game_manager *game, char *map)
 static void	read_file(t_game_manager *game, char **file, char buf[], int fd)
 {
 	int		bytes_read;
-	char	*tmp;
 
 	bytes_read = 1;
 	while (bytes_read != 0)
