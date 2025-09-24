@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:22:10 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 16:55:36 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 22:30:13 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void			map_valid(t_game_manager *game, char *file);
 static int		isborder(t_game_manager *game, int i);
-static void		verify_map(t_game_manager *game, char *file);
 static void		is_pec(t_game_manager *game, char *file, int i);
+static void		verify_map(t_game_manager *game, char *file);
+static int	map_is_solvable(t_game_manager *game);
 
 void	map_valid(t_game_manager *game, char *file)
 {
@@ -82,4 +83,15 @@ static void	verify_map(t_game_manager *game, char *file)
 		free_game(game);
 		error_exit("Map configuration not allowed.", 0);
 	}
+	if (map_is_solvable(game) == 1)
+	{
+		free(file);
+		free_game(game);
+		error_exit("Map isn't resolvable.", 0);
+	}
+}
+
+static int	map_is_solvable(t_game_manager *game)
+{
+	
 }

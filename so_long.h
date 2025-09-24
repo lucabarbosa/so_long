@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 19:30:48 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 19:42:44 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct s_game_manager
 {
 	void			*mlx;
 	void			*mlx_win;
-	t_img			*mlx_img;
 	t_map			*game;
+	t_img			*mlx_img;
 	t_img			*player;
 	t_img			*coll;
 	t_img			*ground;
@@ -60,6 +60,8 @@ typedef struct s_coord
 	int				y;
 }				t_coord;
 
+
+void	draw(t_game_manager *game);
 void			game_destroy(t_map *game);
 t_game_manager	*struct_init(char *map);
 void			free_game(t_game_manager *struct_game);

@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:14:12 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/22 23:23:57 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 19:35:08 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,15 @@ static void	init_render(t_game_manager *game)
 		free_game(game);
 		error_exit("Can't load mlx", 0);
 	}
-	game->mlx_win = mlx_new_window(game->mlx, game->game->width * 64,
-			game->game->height * 64, "so_long in Brazil");
+	game->mlx_win = mlx_new_window(game->mlx, game->game->width * 40,
+			game->game->height * 40, "so_long in Brazil");
 	if (game->mlx_win == 0)
 	{
 		free_game(game);
 		error_exit("Can't create a window", 0);
 	}
-	game->mlx_img = mlx_new_image(game->mlx, game->game->width * 64,
-			game->game->height * 64);
+	game->mlx_img = mlx_new_image(game->mlx, game->game->width * 40,
+			game->game->height * 40);
 	if (game->mlx_img == 0)
 	{
 		free_game(game);

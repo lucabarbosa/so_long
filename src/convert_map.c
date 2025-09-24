@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:43:22 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 19:30:46 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 22:33:44 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	convert_map(t_game_manager *game, char *file)
 			coordinates(game, &file[position], line, i, &collectables);
 			game->game->map[line][i++] = file[position] - '0';
 			position++;
-	
 		}
 		position++;
 		line++;

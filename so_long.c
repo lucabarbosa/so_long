@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:42:58 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 19:32:11 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/23 19:49:17 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char *argv[])
 	if (dotber(argv[1]) == 1)
 		error_exit("Invalid map extension. The map must be <.ber>\n", 0);
 	game = struct_init(argv[1]);
+	drawing(game);
 	return (0);
 }
 
