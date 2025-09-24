@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/23 19:42:44 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/24 11:08:10 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_coord
 }				t_coord;
 
 
-void	draw(t_game_manager *game);
+void			draw(t_game_manager *game);
 void			game_destroy(t_map *game);
 t_game_manager	*struct_init(char *map);
 void			free_game(t_game_manager *struct_game);
