@@ -1,19 +1,24 @@
 NAME		=	so_long
 CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror
-OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
+MLX			=	mlx/Makefile.mk
+LIBFT		=	libft/libft.a
+INC			=	-I ./src -I ./libft -I ./mlx
+LIBS		=	-L ./libft -l:libft.a -L ./mlx -lmlx -lXext -lX11 -lm -lbsd
+OBJ			=	$(patsubst src/%.c, obj/%.o, $(SRC))
 SRC			=	src/struct_init.c \
 				src/free_game.c \
 				src/init_map.c \
 				src/hand_map.c \
 				src/map_valid.c \
 				src/convert_map.c \
-				src/
-
-MLX			=	mlx/Makefile.gen
-LIBFT			=	libft/libft.a
-INC			=	-I ./libft -I ./mlx
-LIBS			=	-L ./libft -LIBFT -L ./mlx -lmlx -lXext -lX11 -lm -lbsd
+				src/solvable_map.c \
+				src/draw.c \
+				src/update.c \
+				src/press_keys.c \
+				src/movements.c \
+				src/utils.c \
+				src/so_long.c
 
 all:		$(MLX) $(LIBFT) obj $(NAME)
 

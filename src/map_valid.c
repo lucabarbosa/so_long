@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:22:10 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/24 16:09:07 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/25 14:51:43 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,5 @@ static void	verify_map(t_game_manager *game, char *file)
 		free(file);
 		free_game(game);
 		error_exit("Map configuration not allowed.", 0);
-	}
-	if (solvable(game) == 1)
-	{
-		free(file);
-		free_game(game);
-		error_exit("Map isn't resolvable.", 0);
 	}
 }

@@ -37,6 +37,12 @@ void	handling_map(t_game_manager *game, char *file)
 		error_exit("handling_map -> malloc", errno);
 	}
 	convert_map(game, file);
+	if (solvable(game) == 1)
+	{
+		free(file);
+		free_game(game);
+		error_exit("Map isn't resolvable.", 0);
+	}
 }
 
 static void	width_map(t_game_manager *game, char *file)
