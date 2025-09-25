@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:22:14 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/19 14:57:19 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/25 15:03:00 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	error_exit(char *error_message, int error_number)
 		ft_putstr_fd(": ", 2);
 		ft_putstr_fd(strerror(error_number), 2);
 	}
+	ft_putchar_fd('\n', 2);
 	exit(1);
 }
