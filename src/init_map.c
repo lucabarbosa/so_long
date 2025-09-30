@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   get_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "so_long.h"
 
-void		init_map(t_game_manager *game, char *map);
+void		get_map(t_game_manager *game, char *map);
 static void	read_file(t_game_manager *game, char **file, char buf[], int fd);
 static void	file_join(t_game_manager *game, char **file, char buf[], int fd);
 
-void	init_map(t_game_manager *game, char *map)
+void	get_map(t_game_manager *game, char *map)
 {
 	int				fd;
 	char			*file;
@@ -33,7 +33,7 @@ void	init_map(t_game_manager *game, char *map)
 	{		
 		free_game(game);
 		close(fd);
-		error_exit("init_map -> calloc", errno);
+		error_exit("get_map -> calloc", errno);
 	}
 	read_file(game, &file, buf, fd);
 	close(fd);
@@ -54,7 +54,7 @@ static void	read_file(t_game_manager *game, char **file, char buf[], int fd)
 			free(*file);
 			close(fd);
 			free_game(game);
-			error_exit("init_map -> read", errno);
+			error_exit("get_map -> read", errno);
 		}
 		else
 		{
@@ -75,6 +75,6 @@ static void	file_join(t_game_manager *game, char **file, char buf[], int fd)
 	{
 		close(fd);
 		free_game(game);
-		error_exit("init_map -> ft_strjoin", errno);
+		error_exit("get_map -> ft_strjoin", errno);
 	}
 }

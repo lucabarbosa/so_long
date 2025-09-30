@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:58:29 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/25 12:34:15 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 15:32:33 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ void	update(t_game_manager *game)
 	draw(game);
 	if (game->game->exit.x == game->game->player.x
 		&& game->game->exit.y == game->game->player.y)
+	{
 		if (game->game->count_coll == game->game->player_coll)
+		{
 			free_game(game);
+			exit(0);
+		}
+	}
 }

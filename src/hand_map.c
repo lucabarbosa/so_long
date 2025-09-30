@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handling_map.c                                         :+:      :+:    :+:   */
+/*   hand_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/15 23:02:53 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/21 15:35:19 by lbento           ###   ########.fr       */
+/*   Created: 2025/09/30 14:58:55 by lbento            #+#    #+#             */
+/*   Updated: 2025/09/30 18:45:04 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ static void	height_map(t_game_manager *game, char *file)
 	while (file[count_line] != '\0')
 	{
 		width_size = 0;
-		while (file[count_line + width_size] != '\0' && file[count_line + width_size] != '\n')
+		while (file[count_line + width_size] != '\0'
+			&& file[count_line + width_size] != '\n')
 			width_size++;
 		if (game->game->width != width_size)
 		{

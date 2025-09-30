@@ -6,15 +6,15 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:41:07 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 00:43:51 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 15:39:43 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	draw(t_game_manager *game);
-static void	square_map(t_game_manager *game, t_img *img, int x, int y);
-static void	draw_env(t_game_manager *game, int i, int j);
+void			draw(t_game_manager *game);
+static void		square_map(t_game_manager *game, t_img *img, int x, int y);
+static void		draw_env(t_game_manager *game, int i, int j);
 
 void	draw(t_game_manager *game)
 {

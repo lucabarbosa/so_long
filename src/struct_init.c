@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:14:12 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 00:44:14 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 19:43:01 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_game_manager	*struct_init(char *map)
 void	init_game(t_game_manager *game, char *map)
 {
 	game->game = (t_map *)malloc(sizeof(t_map));
-	if (game->game == 0)
+	if (!game->game)
 	{
 		free_game(game);
 		error_exit("init_game -> malloc", errno);
@@ -59,27 +59,27 @@ void	init_game(t_game_manager *game, char *map)
 	game->game->player_left = 0;
 	game->game->player_right = 0;
 	game->game->player_coll = 0;
-	init_map(game, map);
+	get_map(game, map);
 }
 
 static void	init_render(t_game_manager *game)
 {
 	game->mlx = mlx_init();
-	if (game->mlx == 0)
+	if (!game->mlx)
 	{
 		free_game(game);
 		error_exit("Can't load mlx", 0);
 	}
 	game->mlx_win = mlx_new_window(game->mlx, game->game->width * 32,
-			game->game->height * 32, "so_long in Brazil");
-	if (game->mlx_win == 0)
+			game->game->height * 32, "so_long");
+	if (!game->mlx_win)
 	{
 		free_game(game);
 		error_exit("Can't create a window", 0);
 	}
 	game->mlx_img = mlx_new_image(game->mlx, game->game->width * 32,
 			game->game->height * 32);
-	if (game->mlx_img == 0)
+	if (!game->mlx_img)
 	{
 		free_game(game);
 		error_exit("Can't create an image", 0);
@@ -89,8 +89,8 @@ static void	init_render(t_game_manager *game)
 static void	init_texture(t_game_manager *game)
 {
 	texture_load(game, &game->player, "./assets/player.xpm");
-	texture_load(game, &game->exit, "./assets/exit.xpm");
-	texture_load(game, &game->coll, "./assets/collectible.xpm");
+	texture_load(game, &game->exit, "./assets/car.xpm");
+	texture_load(game, &game->coll, "./assets/gas.xpm");
 	texture_load(game, &game->wall, "./assets/wall.xpm");
 	texture_load(game, &game->ground, "./assets/ground.xpm");
 }

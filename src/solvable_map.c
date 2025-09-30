@@ -6,16 +6,16 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 15:03:50 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/25 14:17:57 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 19:09:34 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	solvable(t_game_manager *game);
-static int	**copy_map(t_game_manager *game);
-static void	free_map_copy(int **map_copy, int height);
-static void	flood_fill(int **map, int x, int y, t_game_manager *game);
+int				solvable(t_game_manager *game);
+static int		**copy_map(t_game_manager *game);
+static void		free_map_copy(int **map_copy, int height);
+static void		flood_fill(int **map, int x, int y, t_game_manager *game);
 
 int	solvable(t_game_manager *game)
 {
@@ -59,28 +59,31 @@ static int	**copy_map(t_game_manager *game)
 		map_copy[i] = (int *)malloc(sizeof(int) * game->game->width);
 		if (!map_copy[i])
 		{
-			while (i-- >= 0)
+			while (i >= 0)
+			{
 				free(map_copy[i]);
+				i--;
+			}
 			free(map_copy);
 			return (NULL);
 		}
-	ft_memcpy(map_copy[i], game->game->map[i], sizeof(int) * game->game->width);
+		ft_memcpy(map_copy[i], game->game->map[i],
+			sizeof(int) * game->game->width);
 		i++;
 	}
 	return (map_copy);
 }
 
-static void	flood_fill(int **map, int x, int y, t_game_manager *game)
+static void	flood_fill(int **copied_map, int x, int y, t_game_manager *game)
 {
 	if (x < 0 || x >= game->game->width || y < 0 || y >= game->game->height
-		|| map[y][x] != 0)
+		|| copied_map[y][x] != 0)
 		return ;
-	
-	map[y][x] = 2;
-	flood_fill(map, x + 1, y, game);
-	flood_fill(map, x - 1, y, game);
-	flood_fill(map, x, y + 1, game);
-	flood_fill(map, x, y - 1, game);
+	copied_map[y][x] = 2;
+	flood_fill(copied_map, x + 1, y, game);
+	flood_fill(copied_map, x - 1, y, game);
+	flood_fill(copied_map, x, y + 1, game);
+	flood_fill(copied_map, x, y - 1, game);
 }
 
 static void	free_map_copy(int **map_copy, int height)
@@ -89,7 +92,6 @@ static void	free_map_copy(int **map_copy, int height)
 
 	if (!map_copy)
 		return ;
-
 	i = 0;
 	while (i < height)
 	{

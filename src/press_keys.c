@@ -6,14 +6,14 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:53:33 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/25 14:51:06 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 20:09:58 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 int	key_pressed(int pressed_key, t_game_manager *game);
-int	key_release(int pressed_key, t_game_manager *game);
+int	key_released(int pressed_key, t_game_manager *game);
 int	destroy_hook(int pressed_key, t_game_manager *game);
 
 int	key_pressed(int pressed_key, t_game_manager *game)
@@ -35,7 +35,7 @@ int	key_pressed(int pressed_key, t_game_manager *game)
 	return (0);
 }
 
-int	key_release(int pressed_key, t_game_manager *game)
+int	key_released(int pressed_key, t_game_manager *game)
 {
 	if (pressed_key == 119)
 		game->game->player_up = 0;
@@ -51,9 +51,8 @@ int	key_release(int pressed_key, t_game_manager *game)
 
 int	destroy_hook(int pressed_key, t_game_manager *game)
 {
-	(void)pressed_key;
-	(void)game;
 	free_game(game);
 	exit(0);
-	return (0);
+	(void)pressed_key;
+	(void)game;
 }
