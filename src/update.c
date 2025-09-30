@@ -6,39 +6,15 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:58:29 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 15:32:33 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 20:16:11 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	had_move(t_game_manager *game, int x, int y)
-{
-	if (game->game->player.x != x || game->game->player.y != y)
-	{
-		game->game->player_move++;
-		ft_putnbr_fd(game->game->player_move, 1);
-		ft_putendl_fd("", 1);
-	}
-}
-
-static void	iscollectable(t_game_manager *game)
-{
-	int				k;
-
-	k = 0;
-	while (k < game->game->count_coll)
-	{
-		if (game->game->coll[k].x == game->game->player.x
-			&& game->game->coll[k].y == game->game->player.y)
-		{
-			game->game->coll[k].x = -1;
-			game->game->coll[k].y = -1;
-			game->game->player_coll++;
-		}
-		k++;
-	}
-}
+void		update(t_game_manager *game);
+static void	had_move(t_game_manager *game, int x, int y);
+static void	iscollectable(t_game_manager *game);
 
 void	update(t_game_manager *game)
 {
@@ -66,5 +42,33 @@ void	update(t_game_manager *game)
 			free_game(game);
 			exit(0);
 		}
+	}
+}
+
+static void	had_move(t_game_manager *game, int x, int y)
+{
+	if (game->game->player.x != x || game->game->player.y != y)
+	{
+		game->game->player_move++;
+		ft_putnbr_fd(game->game->player_move, 1);
+		ft_putendl_fd("", 1);
+	}
+}
+
+static void	iscollectable(t_game_manager *game)
+{
+	int				k;
+
+	k = 0;
+	while (k < game->game->count_coll)
+	{
+		if (game->game->coll[k].x == game->game->player.x
+			&& game->game->coll[k].y == game->game->player.y)
+		{
+			game->game->coll[k].x = -1;
+			game->game->coll[k].y = -1;
+			game->game->player_coll++;
+		}
+		k++;
 	}
 }
