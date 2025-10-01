@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:53:33 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 20:26:11 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 20:33:23 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	key_pressed(int keycode, t_game_manager *game);
 int	key_released(int keycode, t_game_manager *game);
-int	destroy_hook(int keycode, t_game_manager *game);
+int	destroy_hook(t_game_manager *game);
 
 int	key_pressed(int keycode, t_game_manager *game)
 {
@@ -49,10 +49,8 @@ int	key_released(int keycode, t_game_manager *game)
 	return (0);
 }
 
-int	destroy_hook(int keycode, t_game_manager *game)
+int	destroy_hook(t_game_manager *game)
 {
 	free_game(game);
 	exit(0);
-	(void)keycode;
-	(void)game;
 }

@@ -6,14 +6,14 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:14:12 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 19:43:01 by lbento           ###   ########.fr       */
+/*   Updated: 2025/09/30 20:36:53 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 t_game_manager	*struct_init(char *map);
-void			init_game(t_game_manager *game, char *map);
+static void		init_game(t_game_manager *game, char *map);
 static void		init_render(t_game_manager *game);
 static void		init_texture(t_game_manager *game);
 static void		texture_load(t_game_manager *game, t_img **img, char *path);
