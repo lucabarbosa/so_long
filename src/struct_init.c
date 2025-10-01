@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:14:12 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 20:36:53 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/01 14:43:12 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ static void	init_render(t_game_manager *game)
 static void	init_texture(t_game_manager *game)
 {
 	texture_load(game, &game->player, "./assets/player.xpm");
-	texture_load(game, &game->exit, "./assets/car.xpm");
-	texture_load(game, &game->coll, "./assets/gas.xpm");
+	texture_load(game, &game->exit, "./assets/exit.xpm");
+	texture_load(game, &game->coll, "./assets/trophy.xpm");
 	texture_load(game, &game->wall, "./assets/wall.xpm");
 	texture_load(game, &game->ground, "./assets/ground.xpm");
 }
