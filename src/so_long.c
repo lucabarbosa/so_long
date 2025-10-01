@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:42:58 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 21:18:23 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/01 20:05:55 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	t_game_manager	*game;
 
 	if (argc != 2)
-		error_exit("Invalid number of arguments!\n", 0);
+		error_exit("Invalid number of arguments!", 0);
 	if (dotber(argv[1]) == 1)
 		error_exit("Invalid map. The map must be <.ber>.", 0);
 	game = struct_init(argv[1]);
