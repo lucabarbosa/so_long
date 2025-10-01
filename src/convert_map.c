@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:43:22 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 21:13:33 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/01 19:30:05 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ static void	free_matrix(t_game_manager *game, char *file, int **map, int size)
 	error_exit("convert_map -> malloc", errno);
 }
 
-static void	collectables(t_game_manager *game, int line, int i, int *collect)
+static void	collectables(t_game_manager *game, int line, int pos, int *collect)
 {
-		game->game->coll[*collect].x = i;
+		game->game->coll[*collect].x = pos;
 		game->game->coll[*collect].y = line;
 		(*collect)++;
 }

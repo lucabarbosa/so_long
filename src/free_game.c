@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 23:22:14 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 21:13:09 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/01 15:08:58 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ void	game_destroy(t_map *game)
 		{
 			i = 0;
 			while (i < game->height)
-				free(game->map[i++]);
+			{
+				free(game->map[i]);
+				i++;
+			}
 			free(game->map);
 		}
 		free(game);

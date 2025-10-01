@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:58:55 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 21:17:43 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/01 15:21:24 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,24 +60,24 @@ static void	width_map(t_game_manager *game, char *file)
 
 static void	height_map(t_game_manager *game, char *file)
 {
-	int				count_line;
-	int				width_size;
+	int				line_pos;
+	int				size_line;
 
 	game->game->height = 1;
-	count_line = game->game->width + 1;
-	while (file[count_line] != '\0')
+	line_pos = game->game->width + 1;
+	while (file[line_pos] != '\0')
 	{
-		width_size = 0;
-		while (file[count_line + width_size] != '\0'
-			&& file[count_line + width_size] != '\n')
-			width_size++;
-		if (game->game->width != width_size)
+		size_line = 0;
+		while (file[line_pos + size_line] != '\0'
+			&& file[line_pos + size_line] != '\n')
+			size_line++;
+		if (game->game->width != size_line)
 		{
 			free(file);
 			free_game(game);
 			error_exit("The map isn't rectangular", 0);
 		}
-		count_line += width_size + 1;
+		line_pos += size_line + 1;
 		game->game->height++;
 	}
 }

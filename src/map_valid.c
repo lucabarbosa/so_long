@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 23:22:10 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 20:59:00 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/01 15:43:39 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,22 @@ static void	is_pec(t_game_manager *game, char *file, int i)
 
 static void	verify_map(t_game_manager *game, char *file)
 {
-	if (game->game->count_player != 1
-		|| game->game->count_exit != 1
-		|| game->game->count_coll < 1)
+	if (game->game->count_player != 1)
 	{
 		free(file);
 		free_game(game);
-		error_exit("Map configuration not allowed.", 0);
+		error_exit("Map should have only one player!", 0);
+	}
+	else if (game->game->count_exit != 1)
+	{
+		free(file);
+		free_game(game);
+		error_exit("Map should have only one exit!", 0);
+	}
+	else if (game->game->count_coll < 1)
+	{
+		free(file);
+		free_game(game);
+		error_exit("Map should have at least 1 collectable!", 0);
 	}
 }
