@@ -17,7 +17,6 @@ SRC			=	src/struct_init.c \
 				src/update.c \
 				src/press_keys.c \
 				src/movements.c \
-				src/mlx_utils.c \
 				src/so_long.c
 
 all:		$(MLX) $(LIBFT) obj $(NAME)
