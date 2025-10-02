@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:58:29 by lbento            #+#    #+#             */
-/*   Updated: 2025/10/02 12:46:22 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/02 15:35:41 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,28 +77,27 @@ static void	iscollectable(t_game_manager *game)
 
 static void	print_victory(t_game_manager *game)
 {
-	ft_putendl_fd("\033[1;32m", 1);
-	ft_putendl_fd("╔════════════════════════════════════╗", 1);
+	ft_putendl_fd("\033[1;32m╔════════════════════════════════════╗", 1);
 	ft_putendl_fd("║      ⭐  CONGRATULATIONS!  ⭐      ║", 1);
 	ft_putendl_fd("║                                    ║", 1);
-	ft_putendl_fd("║\033[1;30m  If a person has no dreams, they \033[1;32m  ║", 1);
-	ft_putendl_fd("║\033[1;30m no longer have any reason to live. \033[1;32m║", 1);
+	ft_putendl_fd("║  If a person has no dreams, they   ║", 1);
+	ft_putendl_fd("║ no longer have any reason to live. ║", 1);
 	ft_putendl_fd("║                                    ║", 1);
 	ft_putstr_fd("║\033[1;36m         Total Moves: \033[1;32m", 1);
-	if(game->game->player_move > 9 && game->game->player_move < 99)
+	if (game->game->player_move > 9 && game->game->player_move < 99)
 	{
-	ft_putnbr_fd(game->game->player_move, 1);
-	ft_putendl_fd("\033[1;32m            ║", 1);
+		ft_putnbr_fd(game->game->player_move, 1);
+		ft_putendl_fd("\033[1;32m            ║", 1);
 	}
-	else if(game->game->player_move > 99)
+	else if (game->game->player_move > 99)
 	{
-	ft_putnbr_fd(game->game->player_move, 1);
-	ft_putendl_fd("\033[1;32m           ║", 1);
+		ft_putnbr_fd(game->game->player_move, 1);
+		ft_putendl_fd("\033[1;32m           ║", 1);
 	}
 	else
 	{
-	ft_putnbr_fd(game->game->player_move, 1);
-	ft_putendl_fd("\033[1;32m             ║", 1);
+		ft_putnbr_fd(game->game->player_move, 1);
+		ft_putendl_fd("\033[1;32m             ║", 1);
 	}
 	ft_putendl_fd("╚════════════════════════════════════╝", 1);
 	ft_putstr_fd("\033[0m", 1);
