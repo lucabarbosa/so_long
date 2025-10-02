@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:01:28 by lbento            #+#    #+#             */
-/*   Updated: 2025/10/01 14:58:33 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/02 00:25:23 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,5 @@ void			move_down(t_game_manager *game, int x, int y);
 void			move_left(t_game_manager *game, int x, int y);
 void			move_right(t_game_manager *game, int x, int y);
 void			update(t_game_manager *game);
-unsigned int	mlx_get_pixel(t_img *img, int x, int y);
-void			mlx_draw_pixel(t_img *mlx_img, int x, int y, int color);
-unsigned int	mlx_rgb_to_int(int o, int r, int g, int b);
 
 #endif

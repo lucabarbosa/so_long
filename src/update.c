@@ -6,7 +6,7 @@
 /*   By: lbento <lbento@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:58:29 by lbento            #+#    #+#             */
-/*   Updated: 2025/09/30 20:35:52 by lbento           ###   ########.fr       */
+/*   Updated: 2025/10/02 01:14:01 by lbento           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void		update(t_game_manager *game);
 static void	had_move(t_game_manager *game, int x, int y);
 static void	iscollectable(t_game_manager *game);
+static void	print_victory(t_game_manager *game);
 
 void	update(t_game_manager *game)
 {
@@ -39,6 +40,7 @@ void	update(t_game_manager *game)
 	{
 		if (game->game->count_coll == game->game->player_coll)
 		{
+			print_victory(game);
 			free_game(game);
 			exit(0);
 		}
@@ -50,8 +52,9 @@ static void	had_move(t_game_manager *game, int x, int y)
 	if (game->game->player.x != x || game->game->player.y != y)
 	{
 		game->game->player_move++;
+		ft_putstr_fd("Movement: ", 1);
 		ft_putnbr_fd(game->game->player_move, 1);
-		ft_putendl_fd("", 1);
+		ft_putchar_fd('\n', 1);
 	}
 }
 
@@ -71,4 +74,34 @@ static void	iscollectable(t_game_manager *game)
 		}
 		k++;
 	}
+}
+
+static void	print_victory(t_game_manager *game)
+{
+	ft_putendl_fd("\033[1;32m", 1);
+	ft_putendl_fd("╔══════════════════════════════════════════╗", 1);
+	ft_putendl_fd("║                                          ║", 1);
+	ft_putendl_fd("║\033[1;32m         ⭐  CONGRATULATIONS!  ⭐   \033[1;3]      ║", 1);
+	ft_putendl_fd("║                                          ║", 1);
+	ft_putendl_fd("║            YOU WON THE GAME!             ║", 1);
+	ft_putendl_fd("║                                          ║", 1);
+	ft_putstr_fd("║\033[1;36m            Total Moves: \033[1;32m", 1);
+	if(game->game->player_move > 9 && game->game->player_move < 99)
+	{
+	ft_putnbr_fd(game->game->player_move, 1);
+	ft_putendl_fd("\033[1;32m               ║", 1);
+	}
+	else if(game->game->player_move > 99)
+	{
+	ft_putnbr_fd(game->game->player_move, 1);
+	ft_putendl_fd("\033[1;32m              ║", 1);
+	}
+	else
+	{
+	ft_putnbr_fd(game->game->player_move, 1);
+	ft_putendl_fd("\033[1;32m                ║", 1);
+	}
+	ft_putendl_fd("║                                          ║", 1);
+	ft_putendl_fd("╚══════════════════════════════════════════╝", 1);
+	ft_putstr_fd("\033[0m", 1);
 }
