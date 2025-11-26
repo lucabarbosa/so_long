@@ -1,7 +1,7 @@
 NAME		=	so_long
-CC			=	cc
+CC			=	@cc
 CFLAGS		=	-Wall -Wextra -Werror
-MLX			=	mlx/Makefile.mk
+MLX			=	mlx/libmlx_Linux.a
 LIBFT		=	libft/libft.a
 INC			=	-I ./src -I ./libft -I ./mlx
 LIBS		=	-L ./libft -l:libft.a -L ./mlx -lmlx -lXext -lX11 -lm -lbsd
@@ -23,14 +23,15 @@ all:		$(MLX) $(LIBFT) obj $(NAME)
 
 $(NAME):	$(OBJ)
 			$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+			@echo "\033[1;32m✅ so_long compiled!\033[0m"
 
 $(MLX):
 			@make -s -C mlx
-			@echo "Minilibx compiled!"
+			@echo "\033[1;32m✅Minilibx compiled!\033[0m"
 
 $(LIBFT):		
 			@make -s -C libft
-			@echo "Libft compiled!"
+			@echo "\033[1;32m✅Libft compiled!\033[0m"
 
 obj:
 			@mkdir -p obj
@@ -40,13 +41,14 @@ obj/%.o:	src/%.c
 
 clean:
 			@make -s $@ -C libft
+			@make -s $@ -C mlx
 			@rm -rf $(OBJ) obj
-			@echo "Objects deleted."
+			@echo "\033[1;31mObjects deleted.\033[0m"
 
 fclean:		clean
 			@make -s $@ -C libft
 			@rm -rf $(NAME)
-			@echo "Objects and so_long deleted."
+			@echo "\033[1;31mObjects and so_long deleted.\033[0m"
 
 re:			fclean all
 
